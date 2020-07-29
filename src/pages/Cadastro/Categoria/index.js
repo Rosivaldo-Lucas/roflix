@@ -49,16 +49,13 @@ const CadastroCategoria = () => {
           onChange={handleChange}
         />
 
-        <div>
-          <label htmlFor="descricao">
-            Descrição da Categoria
-            <textarea
-              name="descricao"
-              value={campos.descricao}
-              onChange={handleChange}
-            />
-          </label>  
-        </div>
+        <FormField
+          label="Descrição da Categoria:"
+          type="textarea"
+          name="descricao"
+          value={campos.descricao}
+          onChange={handleChange}
+        />
 
         <FormField
           label="Cor da Categoria:"

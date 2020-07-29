@@ -5,12 +5,23 @@ const FormField = ({ label, value, onChange, type, name }) => {
     <div>
       <label>
         {label}
-        <input
-          type={type}
-          name={name}
-          value={value}
-          onChange={onChange}
-        />
+        {type === 'textarea'
+          ? (
+              <textarea
+                name={name}
+                value={value}
+                onChange={onchange}
+              />
+            )
+          : (
+              <input
+                type={type}
+                name={name}
+                value={value}
+                onChange={onChange}
+              />
+            )
+        }
       </label>
     </div>
   );
