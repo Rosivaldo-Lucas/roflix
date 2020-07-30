@@ -15,7 +15,9 @@ const CadastroCategoria = () => {
   const [categorias, setCategorias] = useState([]);
   const [campos, setCampos] = useState(valoresIniciais);
 
-  const URL = 'http://localhost:8080/categorias';
+  const URL = window.location.hostname.includes('localhost')
+    ? 'http://localhost:8080/categorias'
+    : 'https://roflix.herokuapp.com/categorias';
   useEffect(() => {
     fetch(URL)
       .then(async (resposta) => {
